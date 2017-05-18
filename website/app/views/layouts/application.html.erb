@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Website</title>
+    <title>Disentanglement  LLC</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,25 @@
   </head>
 
   <body class='<%= controller_name %>'>
-    <%= yield %>
+  	<div id="banner">
+  		<%= image_tag 'Logo2.svg', alt: 'logo here' %>
+  		<span class="title"><%= @page_title %></span>
+  	</div>
+
+  	<div id="columns">
+  		<div id="side">
+  			<ul>
+  				<li><a href="http://www....">Home</a></li>
+  				<li><a href="http://www....">Projects</a></li>
+  				<li><a href="http://www....">Store</a></li>
+  				<li><a href="http://www....">About Us</a></li>
+  				<li><a href="http://www....">Contact</a></li>
+  			</ul>
+  		</div>
+
+  		<div id="main">
+    		<%= yield %>
+    	</div>
+    </div>
   </body>
 </html>

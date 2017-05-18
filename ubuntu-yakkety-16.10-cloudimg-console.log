@@ -7218,4 +7218,1244 @@ ubuntu-yakkety login: [92292.315298] general protection fault: 0000 [#1] SMP
 [92599.359686] Stack:
 [92599.380204]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
 [92599.445033]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
-[92599.477
+[92599.477007]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92599.561380] Call Trace:
+[92599.562040]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92599.563109]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92599.564179]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92599.565397]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92599.613806] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92599.790369] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92599.847163]  RSP <ffff950afa82be58>
+[92599.882264] CR2: ffffffffb42dce94
+[92599.966774] ---[ end trace 119de0c902a58a46 ]---
+[92600.020757] ------------[ cut here ]------------
+[92600.125437] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92600.154516] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92600.844660] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92600.883140] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92600.922828]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92601.052694]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92601.149460]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92601.255711] Call Trace:
+[92601.272764]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92601.304343]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92601.305377]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92601.306568]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92601.385908]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92601.390600]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92601.422129] ---[ end trace 119de0c902a58a47 ]---
+[92601.434476] Fixing recursive fault but reboot is needed!
+[92601.479284] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92601.511869] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92601.555514] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92601.588252] Oops: 0003 [#135] SMP
+[92601.610174] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92602.066676] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92602.099214] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92602.174132] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92602.195381] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92602.267631] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92602.308024] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92602.338545] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92602.373596] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92602.394555] R10: 00003fffffe00000 R11: 0000000000001bad R12: 0000000000000001
+[92602.468702] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92602.473829] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92602.572565] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92602.605214] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92602.641792] Stack:
+[92602.653101]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92602.767076]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92602.818434]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92602.856950] Call Trace:
+[92602.880288]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92602.890651]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92602.937697]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92602.948586]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92603.011069] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92603.309015] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92603.342117]  RSP <ffff950afa82be58>
+[92603.354178] CR2: ffffffffb42dce94
+[92603.417294] ---[ end trace 119de0c902a58a48 ]---
+[92603.463959] ------------[ cut here ]------------
+[92603.533674] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92603.588417] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92604.040836] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92604.123329] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92604.156106]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92604.267587]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92604.297898]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92604.374251] Call Trace:
+[92604.374936]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92604.376023]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92604.377053]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92604.421622]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92604.428951]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92604.430181]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92604.433984] ---[ end trace 119de0c902a58a49 ]---
+[92604.482182] Fixing recursive fault but reboot is needed!
+[92604.528103] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92604.529686] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92604.531027] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92604.544256] Oops: 0003 [#136] SMP
+[92604.551343] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92604.829711] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92604.831597] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92604.912900] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92604.941201] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92605.013790] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92605.062988] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92605.113289] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92605.178337] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92605.185230] R10: 00003fffffe00000 R11: 0000000000001bde R12: 0000000000000001
+[92605.226304] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92605.262614] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92605.370484] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92605.472874] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92605.553890] Stack:
+[92605.570821]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92605.572720]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92605.574683]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92605.576546] Call Trace:
+[92605.577182]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92605.578217]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92605.613435]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92605.693185]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92605.756713] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92605.878115] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92605.936817]  RSP <ffff950afa82be58>
+[92605.983560] CR2: ffffffffb42dce94
+[92606.052462] ---[ end trace 119de0c902a58a4a ]---
+[92606.132843] ------------[ cut here ]------------
+[92606.143843] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92606.187813] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92606.782839] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92606.842563] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92606.870781]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92606.896998]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92606.947112]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92607.005928] Call Trace:
+[92607.006565]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92607.026101]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92607.046803]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92607.053618]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92607.068867]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92607.124061]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92607.131078] ---[ end trace 119de0c902a58a4b ]---
+[92607.161156] Fixing recursive fault but reboot is needed!
+[92607.260771] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92607.262299] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92607.263631] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92607.360783] Oops: 0003 [#137] SMP
+[92607.379686] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92607.778014] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92607.779953] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92607.809601] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92607.851450] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92607.939441] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92607.948860] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92608.056368] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92608.062864] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92608.067929] R10: 00003fffffe00000 R11: 0000000000001c0f R12: 0000000000000001
+[92608.080707] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92608.082109] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92608.094946] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92608.101723] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92608.199264] Stack:
+[92608.241238]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92608.289725]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92608.403478]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92608.405416] Call Trace:
+[92608.406074]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92608.407140]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92608.408194]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92608.409403]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92608.410670] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92608.517015] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92608.527172]  RSP <ffff950afa82be58>
+[92608.554366] CR2: ffffffffb42dce94
+[92608.571525] ---[ end trace 119de0c902a58a4c ]---
+[92608.662433] ------------[ cut here ]------------
+[92608.725857] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92608.738143] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92609.246083] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92609.248076] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92609.269911]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92609.376477]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92609.436316]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92609.527516] Call Trace:
+[92609.539552]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92609.566667]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92609.573105]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92609.652084]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92609.730848]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92609.801343]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92609.860242] ---[ end trace 119de0c902a58a4d ]---
+[92609.871691] Fixing recursive fault but reboot is needed!
+[92609.894279] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92609.979126] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92609.980462] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92610.026317] Oops: 0003 [#138] SMP
+[92610.032437] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92610.185471] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92610.187371] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92610.223021] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92610.257208] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92610.279862] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92610.346554] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92610.374009] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92610.386441] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92610.463169] R10: 00003fffffe00000 R11: 0000000000001c40 R12: 0000000000000001
+[92610.552799] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92610.593613] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92610.614614] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92610.688731] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92610.734939] Stack:
+[92610.756664]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92610.820864]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92610.898007]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92610.931159] Call Trace:
+[92610.961228]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92610.973112]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92610.996971]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92611.051847]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92611.073623] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92611.359508] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92611.419623]  RSP <ffff950afa82be58>
+[92611.431423] CR2: ffffffffb42dce94
+[92611.441212] ---[ end trace 119de0c902a58a4e ]---
+[92611.447818] ------------[ cut here ]------------
+[92611.517692] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92611.614780] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92611.957442] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92611.979333] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92612.023396]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92612.093681]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92612.143477]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92612.163139] Call Trace:
+[92612.183750]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92612.194909]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92612.212585]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92612.262788]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92612.275114]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92612.302596]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92612.362721] ---[ end trace 119de0c902a58a4f ]---
+[92612.363721] Fixing recursive fault but reboot is needed!
+[92612.364852] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92612.463058] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92612.489280] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92612.548368] Oops: 0003 [#139] SMP
+[92612.618311] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92612.815062] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92612.853546] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92612.875144] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92612.892650] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92612.944657] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92612.945769] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92612.951741] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92612.987351] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92613.028884] R10: 00003fffffe00000 R11: 0000000000001c71 R12: 0000000000000001
+[92613.049406] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92613.072911] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92613.116949] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92613.149151] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92613.205159] Stack:
+[92613.237220]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92613.314196]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92613.411858]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92613.414007] Call Trace:
+[92613.414667]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92613.432890]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92613.437685]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92613.517711]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92613.523939] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92613.737418] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92613.738791]  RSP <ffff950afa82be58>
+[92613.739608] CR2: ffffffffb42dce94
+[92613.740403] ---[ end trace 119de0c902a58a50 ]---
+[92613.775378] ------------[ cut here ]------------
+[92613.787132] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92613.872672] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92614.497088] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92614.563002] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92614.570143]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92614.672943]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92614.776249]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92614.807037] Call Trace:
+[92614.850161]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92614.910548]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92614.911586]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92614.912788]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92614.913847]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92614.915081]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92614.937410] ---[ end trace 119de0c902a58a51 ]---
+[92614.980315] Fixing recursive fault but reboot is needed!
+[92615.028146] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92615.112636] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92615.153093] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92615.197031] Oops: 0003 [#140] SMP
+[92615.225920] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92615.609233] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92615.703001] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92615.768600] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92615.827401] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92615.854866] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92615.895812] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92615.897221] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92615.898663] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92615.917621] R10: 00003fffffe00000 R11: 0000000000001ca2 R12: 0000000000000001
+[92615.944064] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92615.953920] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92615.989034] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92616.076308] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92616.114703] Stack:
+[92616.115295]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92616.161954]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92616.247208]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92616.353941] Call Trace:
+[92616.413140]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92616.468930]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92616.488861]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92616.495472]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92616.496782] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92616.690109] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92616.701871]  RSP <ffff950afa82be58>
+[92616.739289] CR2: ffffffffb42dce94
+[92616.760244] ---[ end trace 119de0c902a58a52 ]---
+[92616.829176] ------------[ cut here ]------------
+[92616.861604] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92616.910492] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92617.196207] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92617.236706] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92617.273870]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92617.385454]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92617.461770]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92617.588037] Call Trace:
+[92617.605937]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92617.612555]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92617.702259]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92617.703436]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92617.791857]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92617.850259]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92617.853829] ---[ end trace 119de0c902a58a53 ]---
+[92617.860198] Fixing recursive fault but reboot is needed!
+[92617.878032] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92617.986450] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92618.035856] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92618.068678] Oops: 0003 [#141] SMP
+[92618.069472] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92618.463464] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92618.465371] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92618.540690] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92618.569156] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92618.702830] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92618.733271] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92618.784860] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92618.878714] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92618.921033] R10: 00003fffffe00000 R11: 0000000000001cd3 R12: 0000000000000001
+[92618.946222] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92618.999147] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92619.024339] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92619.030697] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92619.032115] Stack:
+[92619.032704]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92619.134016]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92619.135952]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92619.138015] Call Trace:
+[92619.138674]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92619.139739]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92619.154314]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92619.161374]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92619.162690] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92619.354511] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92619.355867]  RSP <ffff950afa82be58>
+[92619.356684] CR2: ffffffffb42dce94
+[92619.391562] ---[ end trace 119de0c902a58a54 ]---
+[92619.422511] ------------[ cut here ]------------
+[92619.481000] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92619.579266] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92619.782779] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92619.821478] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92619.832939]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92619.854855]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92619.856793]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92619.914575] Call Trace:
+[92619.957234]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92619.979527]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92619.990057]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92619.997212]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92620.026695]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92620.069577]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92620.073733] ---[ end trace 119de0c902a58a55 ]---
+[92620.074754] Fixing recursive fault but reboot is needed!
+[92620.117988] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92620.150968] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92620.190248] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92620.217109] Oops: 0003 [#142] SMP
+[92620.252263] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92620.646582] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92620.726772] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92620.830553] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92620.878733] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92620.963137] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92621.003905] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92621.093233] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92621.094637] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92621.148710] R10: 00003fffffe00000 R11: 0000000000001d04 R12: 0000000000000001
+[92621.193491] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92621.203310] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92621.205057] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92621.245197] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92621.300219] Stack:
+[92621.319711]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92621.411719]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92621.450692]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92621.517483] Call Trace:
+[92621.536499]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92621.579035]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92621.600503]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92621.662360]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92621.702644] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92621.856177] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92621.904365]  RSP <ffff950afa82be58>
+[92621.991878] CR2: ffffffffb42dce94
+[92622.029360] ---[ end trace 119de0c902a58a56 ]---
+[92622.072479] ------------[ cut here ]------------
+[92622.123297] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92622.162228] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92622.400568] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92622.428290] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92622.448421]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92622.507644]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92622.529596]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92622.548701] Call Trace:
+[92622.571456]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92622.586438]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92622.587474]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92622.588701]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92622.613706]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92622.657907]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92622.713435] ---[ end trace 119de0c902a58a57 ]---
+[92622.714441] Fixing recursive fault but reboot is needed!
+[92622.721048] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92622.724842] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92622.753399] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92622.808890] Oops: 0003 [#143] SMP
+[92622.809687] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92623.289675] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92623.291586] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92623.322625] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92623.323852] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92623.406503] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92623.481091] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92623.482654] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92623.489804] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92623.491223] R10: 00003fffffe00000 R11: 0000000000001d35 R12: 0000000000000001
+[92623.507467] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92623.572391] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92623.654841] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92623.673113] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92623.689872] Stack:
+[92623.732537]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92623.740302]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92623.785784]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92623.801637] Call Trace:
+[92623.819309]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92623.861140]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92623.873383]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92623.874612]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92623.901100] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92624.028504] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92624.145182]  RSP <ffff950afa82be58>
+[92624.153408] CR2: ffffffffb42dce94
+[92624.154204] ---[ end trace 119de0c902a58a58 ]---
+[92624.155202] ------------[ cut here ]------------
+[92624.156236] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92624.213440] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92624.497357] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92624.499259] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92624.507126]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92624.547441]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92624.651811]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92624.653743] Call Trace:
+[92624.654398]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92624.741456]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92624.769066]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92624.779990]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92624.901335]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92624.974670]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92624.991380] ---[ end trace 119de0c902a58a59 ]---
+[92625.044843] Fixing recursive fault but reboot is needed!
+[92625.045996] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92625.047544] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92625.083750] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92625.121702] Oops: 0003 [#144] SMP
+[92625.125842] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92625.641291] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92625.703032] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92625.820390] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92625.873401] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92625.885565] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92625.903192] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92625.948978] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92625.961801] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92625.996588] R10: 00003fffffe00000 R11: 0000000000001d66 R12: 0000000000000001
+[92625.998001] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92626.017675] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92626.082340] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92626.162159] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92626.209783] Stack:
+[92626.210372]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92626.282104]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92626.450721]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92626.452669] Call Trace:
+[92626.453324]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92626.460674]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92626.486908]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92626.515447]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92626.551453] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92626.744561] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92626.796603]  RSP <ffff950afa82be58>
+[92626.797433] CR2: ffffffffb42dce94
+[92626.812956] ---[ end trace 119de0c902a58a5a ]---
+[92626.813930] ------------[ cut here ]------------
+[92626.814922] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92626.869817] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92627.221562] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92627.284679] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92627.326212]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92627.398886]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92627.503046]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92627.589810] Call Trace:
+[92627.617761]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92627.619027]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92627.620065]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92627.621268]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92627.629302]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92627.630529]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92627.643572] ---[ end trace 119de0c902a58a5b ]---
+[92627.673479] Fixing recursive fault but reboot is needed!
+[92627.697430] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92627.730399] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92627.797696] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92627.808589] Oops: 0003 [#145] SMP
+[92627.809385] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92628.293772] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92628.295702] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92628.407812] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92628.422909] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92628.489573] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92628.537430] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92628.538849] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92628.540250] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92628.571691] R10: 00003fffffe00000 R11: 0000000000001d97 R12: 0000000000000001
+[92628.607828] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92628.623066] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92628.708753] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92628.746489] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92628.788534] Stack:
+[92628.793380]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92628.795329]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92628.797272]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92628.853658] Call Trace:
+[92628.854315]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92628.878933]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92628.909170]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92628.919597]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92628.924807] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92629.039004] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92629.052535]  RSP <ffff950afa82be58>
+[92629.053358] CR2: ffffffffb42dce94
+[92629.067426] ---[ end trace 119de0c902a58a5c ]---
+[92629.086926] ------------[ cut here ]------------
+[92629.096844] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92629.164701] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92629.415545] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92629.452606] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92629.503436]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92629.606892]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92629.620384]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92629.622320] Call Trace:
+[92629.674448]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92629.762920]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92629.769569]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92629.802377]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92629.829026]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92629.865938]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92629.937389] ---[ end trace 119de0c902a58a5d ]---
+[92629.943930] Fixing recursive fault but reboot is needed!
+[92629.945071] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92629.946609] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92629.947908] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92629.978965] Oops: 0003 [#146] SMP
+[92629.979758] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92630.277429] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92630.325387] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92630.327156] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92630.372366] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92630.409876] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92630.457929] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92630.470522] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92630.471993] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92630.503174] R10: 00003fffffe00000 R11: 0000000000001dc8 R12: 0000000000000001
+[92630.537965] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92630.582115] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92630.619529] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92630.650739] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92630.652155] Stack:
+[92630.652737]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92630.659992]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92630.753061]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92630.754989] Call Trace:
+[92630.755645]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92630.756706]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92630.757819]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92630.845702]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92630.877904] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92631.058888] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92631.102437]  RSP <ffff950afa82be58>
+[92631.161857] CR2: ffffffffb42dce94
+[92631.162720] ---[ end trace 119de0c902a58a5e ]---
+[92631.170845] ------------[ cut here ]------------
+[92631.177648] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92631.179700] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92631.505209] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92631.576159] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92631.604021]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92631.663314]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92631.665243]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92631.686787] Call Trace:
+[92631.692916]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92631.699842]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92631.755438]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92631.763296]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92631.863783]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92631.886706]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92631.888025] ---[ end trace 119de0c902a58a5f ]---
+[92631.918016] Fixing recursive fault but reboot is needed!
+[92631.921175] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92631.922687] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92631.936563] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92631.937854] Oops: 0003 [#147] SMP
+[92631.938644] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92632.123198] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92632.125101] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92632.163125] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92632.213184] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92632.369258] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92632.451472] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92632.463586] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92632.470411] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92632.482791] R10: 00003fffffe00000 R11: 0000000000001df9 R12: 0000000000000001
+[92632.503152] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92632.537662] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92632.612378] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92632.707851] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92632.756302] Stack:
+[92632.783261]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92632.789655]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92632.863669]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92632.898761] Call Trace:
+[92632.917090]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92632.976791]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92633.061836]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92633.093010]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92633.195126] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92633.423765] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92633.426301]  RSP <ffff950afa82be58>
+[92633.457057] CR2: ffffffffb42dce94
+[92633.457849] ---[ end trace 119de0c902a58a60 ]---
+[92633.458889] ------------[ cut here ]------------
+[92633.465394] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92633.479715] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92633.718531] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92633.723246] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92633.765374]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92633.787674]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92633.850468]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92633.964416] Call Trace:
+[92633.971017]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92633.972128]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92634.051219]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92634.052499]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92634.077488]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92634.089894]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92634.131320] ---[ end trace 119de0c902a58a61 ]---
+[92634.169396] Fixing recursive fault but reboot is needed!
+[92634.179475] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92634.228186] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92634.292630] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92634.353108] Oops: 0003 [#148] SMP
+[92634.353898] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92634.569336] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92634.590944] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92634.619423] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92634.629638] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92634.648048] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92634.682482] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92634.689990] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92634.709276] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92634.761950] R10: 00003fffffe00000 R11: 0000000000001e2a R12: 0000000000000001
+[92634.794177] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92634.836779] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92634.864333] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92634.884921] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92634.949054] Stack:
+[92634.992538]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92635.004221]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92635.011889]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92635.093787] Call Trace:
+[92635.132777]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92635.168238]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92635.209069]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92635.232328]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92635.339524] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92635.526323] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92635.569826]  RSP <ffff950afa82be58>
+[92635.655488] CR2: ffffffffb42dce94
+[92635.683474] ---[ end trace 119de0c902a58a62 ]---
+[92635.684483] ------------[ cut here ]------------
+[92635.719180] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92635.723705] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92636.224920] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92636.248022] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92636.297417]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92636.339057]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92636.359666]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92636.438619] Call Trace:
+[92636.444722]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92636.519630]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92636.520633]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92636.553266]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92636.586531]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92636.594494]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92636.595829] ---[ end trace 119de0c902a58a63 ]---
+[92636.653365] Fixing recursive fault but reboot is needed!
+[92636.721901] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92636.771427] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92636.883543] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92636.961954] Oops: 0003 [#149] SMP
+[92636.973688] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92637.428722] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92637.523293] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92637.549732] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92637.615850] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92637.686156] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92637.703645] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92637.763549] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92637.797791] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92637.847597] R10: 00003fffffe00000 R11: 0000000000001e5b R12: 0000000000000001
+[92637.879177] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92637.890040] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92637.921233] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92638.002490] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92638.088475] Stack:
+[92638.136221]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92638.152890]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92638.180561]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92638.281589] Call Trace:
+[92638.292294]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92638.392248]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92638.394435]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92638.473975]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92638.518713] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92638.763773] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92638.765123]  RSP <ffff950afa82be58>
+[92638.771572] CR2: ffffffffb42dce94
+[92638.772361] ---[ end trace 119de0c902a58a64 ]---
+[92638.773358] ------------[ cut here ]------------
+[92638.799631] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92638.875980] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92639.210271] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92639.237091] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92639.259692]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92639.299144]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92639.308654]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92639.356617] Call Trace:
+[92639.392909]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92639.453282]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92639.454756]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92639.491361]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92639.492393]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92639.538754]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92639.545741] ---[ end trace 119de0c902a58a65 ]---
+[92639.553460] Fixing recursive fault but reboot is needed!
+[92639.582904] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92639.633921] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92639.687654] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92639.752116] Oops: 0003 [#150] SMP
+[92639.768142] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92640.253615] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92640.260022] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92640.344471] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92640.373232] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92640.463041] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92640.499045] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92640.581346] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92640.627620] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92640.629070] R10: 00003fffffe00000 R11: 0000000000001e8c R12: 0000000000000001
+[92640.630465] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92640.637355] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92640.718410] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92640.742335] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92640.803618] Stack:
+[92640.804206]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92640.845620]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92640.931768]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92641.057636] Call Trace:
+[92641.088027]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92641.141452]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92641.237400]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92641.259105]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92641.328575] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92641.651962] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92641.749078]  RSP <ffff950afa82be58>
+[92641.752987] CR2: ffffffffb42dce94
+[92641.753776] ---[ end trace 119de0c902a58a66 ]---
+[92641.754773] ------------[ cut here ]------------
+[92641.755767] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92641.807106] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92642.394743] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92642.433652] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92642.447679]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92642.552531]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92642.675486]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92642.767368] Call Trace:
+[92642.788213]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92642.845948]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92642.861831]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92642.889422]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92642.908233]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92642.934520]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92642.940669] ---[ end trace 119de0c902a58a67 ]---
+[92642.945075] Fixing recursive fault but reboot is needed!
+[92642.970377] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92643.064429] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92643.093691] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92643.178645] Oops: 0003 [#151] SMP
+[92643.184895] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92643.887341] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92643.933248] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92643.974304] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92643.987370] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92644.035594] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92644.052999] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92644.054400] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92644.055806] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92644.138395] R10: 00003fffffe00000 R11: 0000000000001ebd R12: 0000000000000001
+[92644.186425] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92644.218653] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92644.229754] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92644.258002] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92644.298006] Stack:
+[92644.349839]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92644.427710]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92644.462009]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92644.550913] Call Trace:
+[92644.582807]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92644.591572]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92644.596721]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92644.678706]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92644.713549] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92644.845219] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92644.885985]  RSP <ffff950afa82be58>
+[92644.886814] CR2: ffffffffb42dce94
+[92644.887612] ---[ end trace 119de0c902a58a68 ]---
+[92644.930589] ------------[ cut here ]------------
+[92644.953225] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92645.050096] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92645.393213] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92645.395107] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92645.479632]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92645.553631]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92645.607264]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92645.648871] Call Trace:
+[92645.652356]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92645.708698]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92645.728872]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92645.762852]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92645.769473]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92645.770705]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92645.805871] ---[ end trace 119de0c902a58a69 ]---
+[92645.820342] Fixing recursive fault but reboot is needed!
+[92645.843260] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92645.889874] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92645.959375] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92645.988810] Oops: 0003 [#152] SMP
+[92645.989609] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92646.279892] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92646.300490] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92646.369240] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92646.428200] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92646.440725] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92646.452320] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92646.469030] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92646.480346] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92646.524607] R10: 00003fffffe00000 R11: 0000000000001eee R12: 0000000000000001
+[92646.556048] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92646.618606] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92646.646092] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92646.708497] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92646.756121] Stack:
+[92646.756716]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92646.821932]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92646.837248]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92646.885277] Call Trace:
+[92646.890334]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92646.896713]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92646.933322]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92646.965359]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92646.971147] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92647.031609] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92647.043653]  RSP <ffff950afa82be58>
+[92647.044477] CR2: ffffffffb42dce94
+[92647.045273] ---[ end trace 119de0c902a58a6a ]---
+[92647.046271] ------------[ cut here ]------------
+[92647.090599] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92647.098798] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92647.492880] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92647.587979] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92647.599929]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92647.624762]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92647.723450]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92647.725852] Call Trace:
+[92647.726509]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92647.727702]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92647.739778]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92647.769381]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92647.773640]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92647.785770]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92647.860288] ---[ end trace 119de0c902a58a6b ]---
+[92647.881649] Fixing recursive fault but reboot is needed!
+[92647.917802] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92647.942499] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92647.996554] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92648.072101] Oops: 0003 [#153] SMP
+[92648.072904] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92648.514302] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92648.573044] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92648.652446] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92648.725905] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92648.753606] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92648.760271] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92648.777960] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92648.788980] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92648.859893] R10: 00003fffffe00000 R11: 0000000000001f1f R12: 0000000000000001
+[92648.894047] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92648.919204] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92648.973351] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92649.037263] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92649.059607] Stack:
+[92649.081402]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92649.111599]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92649.175107]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92649.223496] Call Trace:
+[92649.239814]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92649.261846]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92649.325739]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92649.357764]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92649.359096] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92649.522294] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92649.578387]  RSP <ffff950afa82be58>
+[92649.579206] CR2: ffffffffb42dce94
+[92649.579997] ---[ end trace 119de0c902a58a6c ]---
+[92649.580997] ------------[ cut here ]------------
+[92649.581998] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92649.585615] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92650.057683] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92650.073531] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92650.149361]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92650.179799]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92650.181733]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92650.256736] Call Trace:
+[92650.263180]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92650.317741]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92650.322581]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92650.353247]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92650.365117]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92650.397055]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92650.398733] ---[ end trace 119de0c902a58a6d ]---
+[92650.410882] Fixing recursive fault but reboot is needed!
+[92650.417801] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92650.443652] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92650.554773] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92650.587499] Oops: 0003 [#154] SMP
+[92650.624075] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92650.934497] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92651.003414] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92651.029615] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92651.065957] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92651.136026] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92651.153023] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92651.182020] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92651.183451] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92651.195483] R10: 00003fffffe00000 R11: 0000000000001f50 R12: 0000000000000001
+[92651.244617] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92651.246025] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92651.271771] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92651.278454] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92651.280064] Stack:
+[92651.285190]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92651.323209]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92651.382987]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92651.390457] Call Trace:
+[92651.398441]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92651.430369]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92651.462497]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92651.479674]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92651.512938] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92651.652934] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92651.654298]  RSP <ffff950afa82be58>
+[92651.655126] CR2: ffffffffb42dce94
+[92651.662255] ---[ end trace 119de0c902a58a6e ]---
+[92651.698372] ------------[ cut here ]------------
+[92651.730852] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92651.801329] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92652.402855] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92652.439583] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92652.457342]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92652.526963]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92652.577749]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92652.600987] Call Trace:
+[92652.612530]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92652.682904]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92652.752300]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92652.753510]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92652.754569]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92652.755798]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92652.757119] ---[ end trace 119de0c902a58a6f ]---
+[92652.758157] Fixing recursive fault but reboot is needed!
+[92652.762776] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92652.817037] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92652.847981] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92652.948193] Oops: 0003 [#155] SMP
+[92652.987644] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92653.271677] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92653.363145] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92653.381017] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92653.406198] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92653.408626] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92653.448065] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92653.454771] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92653.570425] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92653.618012] R10: 00003fffffe00000 R11: 0000000000001f81 R12: 0000000000000001
+[92653.630282] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92653.682444] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92653.720593] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92653.748444] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92653.774799] Stack:
+[92653.810459]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92653.905075]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92653.911341]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92654.050193] Call Trace:
+[92654.072073]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92654.116638]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92654.148016]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92654.164730]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92654.177006] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92654.431838] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92654.438857]  RSP <ffff950afa82be58>
+[92654.508534] CR2: ffffffffb42dce94
+[92654.516007] ---[ end trace 119de0c902a58a70 ]---
+[92654.531385] ------------[ cut here ]------------
+[92654.532399] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92654.612057] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92655.046867] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92655.082649] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92655.154308]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92655.262841]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92655.325884]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92655.455038] Call Trace:
+[92655.455706]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92655.456802]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92655.498436]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92655.563206]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92655.610292]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92655.675212]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92655.676543] ---[ end trace 119de0c902a58a71 ]---
+[92655.677625] Fixing recursive fault but reboot is needed!
+[92655.691863] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92655.768810] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92655.803626] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92655.854580] Oops: 0003 [#156] SMP
+[92655.868884] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92656.113984] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92656.163382] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92656.290849] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92656.301679] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92656.318993] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92656.405391] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92656.486737] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92656.529670] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92656.531079] R10: 00003fffffe00000 R11: 0000000000001fb2 R12: 0000000000000001
+[92656.576784] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92656.582394] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92656.604167] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92656.648736] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92656.656040] Stack:
+[92656.662307]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92656.737761]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92656.837148]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92656.855820] Call Trace:
+[92656.856477]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92656.862793]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92656.879465]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92656.900202]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92656.989927] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92657.301581] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92657.382314]  RSP <ffff950afa82be58>
+[92657.404122] CR2: ffffffffb42dce94
+[92657.414447] ---[ end trace 119de0c902a58a72 ]---
+[92657.474318] ------------[ cut here ]------------
+[92657.491532] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92657.494866] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92657.834420] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92657.922876] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92657.930274]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92657.948305]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92658.031164]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92658.068632] Call Trace:
+[92658.078369]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92658.079458]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92658.080527]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92658.201644]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92658.278082]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92658.332215]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92658.426463] ---[ end trace 119de0c902a58a73 ]---
+[92658.488821] Fixing recursive fault but reboot is needed!
+[92658.520612] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92658.614093] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92658.676957] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92658.782719] Oops: 0003 [#157] SMP
+[92658.826112] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92659.158123] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92659.237311] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92659.260809] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92659.295939] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92659.365913] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92659.371923] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92659.413220] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92659.441428] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92659.458016] R10: 00003fffffe00000 R11: 0000000000001fe3 R12: 0000000000000001
+[92659.538427] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92659.569822] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92659.648904] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92659.692472] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92659.704386] Stack:
+[92659.710348]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92659.726772]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92659.772113]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92659.830828] Call Trace:
+[92659.836803]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92659.838360]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92659.839551]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92659.840820]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92659.847942] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92659.877031] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92659.899229]  RSP <ffff950afa82be58>
+[92659.922769] CR2: ffffffffb42dce94
+[92659.923589] ---[ end trace 119de0c902a58a74 ]---
+[92659.953721] ------------[ cut here ]------------
+[92659.964890] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92659.998452] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92660.220691] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92660.229394] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92660.262804]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92660.302937]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92660.378765]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92660.427820] Call Trace:
+[92660.432093]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92660.439652]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92660.446216]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92660.485994]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92660.497144]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92660.545689]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92660.546996] ---[ end trace 119de0c902a58a75 ]---
+[92660.556334] Fixing recursive fault but reboot is needed!
+[92660.563201] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92660.621506] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92660.663046] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92660.703231] Oops: 0003 [#158] SMP
+[92660.704095] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92661.037585] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92661.062983] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92661.170713] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92661.185456] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92661.258684] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92661.302378] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92661.349209] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92661.380716] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92661.406573] R10: 00003fffffe00000 R11: 0000000000002014 R12: 0000000000000001
+[92661.453439] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92661.486176] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92661.488236] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92661.507444] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92661.540006] Stack:
+[92661.572110]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92661.611107]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92661.649677]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92661.685640] Call Trace:
+[92661.695454]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92661.702794]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92661.769404]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92661.770656]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92661.780960] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92661.976366] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92661.987890]  RSP <ffff950afa82be58>
+[92661.988741] CR2: ffffffffb42dce94
+[92661.995071] ---[ end trace 119de0c902a58a76 ]---
+[92661.996082] ------------[ cut here ]------------
+[92661.997087] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92661.999109] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92662.321478] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92662.362846] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92662.443401]  0000000000000086 00000000070713b0 ffff950afa82be78 ffffffffb46311e2
+[92662.529138]  0000000000000000 0000000000000000 ffff950afa82beb8 ffffffffb42831ab
+[92662.531061]  000002e100000009 ffff950afad63b00 0000000000000009 ffff950afa82bda8
+[92662.538632] Call Trace:
+[92662.549654]  [<ffffffffb46311e2>] dump_stack+0x63/0x81
+[92662.565493]  [<ffffffffb42831ab>] __warn+0xcb/0xf0
+[92662.573112]  [<ffffffffb42832dd>] warn_slowpath_null+0x1d/0x20
+[92662.602957]  [<ffffffffb4286e02>] do_exit+0x62/0xb20
+[92662.637011]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92662.662110]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92662.699820] ---[ end trace 119de0c902a58a77 ]---
+[92662.706277] Fixing recursive fault but reboot is needed!
+[92662.771735] BUG: unable to handle kernel paging request at ffffffffb42dce94
+[92662.825229] IP: [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92662.826587] PGD 7f409067 PUD 7f40a063 PMD 7e6001e1 
+[92662.827863] Oops: 0003 [#159] SMP
+[92662.828689] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92663.060338] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92663.064701] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[92663.070971] task: ffff950afad63b00 task.stack: ffff950afa828000
+[92663.122642] RIP: 0010:[<ffffffffb4600ef3>]  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92663.130121] RSP: 0018:ffff950afa82be58  EFLAGS: 00010093
+[92663.194871] RAX: ffff950afa82be70 RBX: ffff950afa82be70 RCX: ffffffffb42dce8c
+[92663.235349] RDX: 00000000fa82bda8 RSI: ffff950afa82bd90 RDI: ffff950afa82bd70
+[92663.279749] RBP: ffff950afa82beb0 R08: 0000000000000000 R09: 0000000000000000
+[92663.372446] R10: 00003fffffe00000 R11: 0000000000002045 R12: 0000000000000001
+[92663.413187] R13: dead000000000200 R14: dead000000000100 R15: ffff950afa82bd70
+[92663.452673] FS:  0000000000000000(0000) GS:ffff950affc00000(0000) knlGS:0000000000000000
+[92663.454430] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[92663.477872] CR2: ffffffffb42dce94 CR3: 0000000036dae000 CR4: 00000000000406f0
+[92663.508686] Stack:
+[92663.535452]  ffff950afa82bd90 ffff950afa82be60 ffff950afa82be60 ffff950afa82be70
+[92663.573280]  ffff950afa82be70 00000000070713b0 ffff950afad63b00 0000000000000009
+[92663.583015]  ffff950afa82bda8 0000000000000009 0000000000000046 ffff950afa82bec8
+[92663.727878] Call Trace:
+[92663.737772]  [<ffffffffb4a9ae11>] schedule+0x61/0x80
+[92663.744848]  [<ffffffffb4287697>] do_exit+0x8f7/0xb20
+[92663.771627]  [<ffffffffb4aa0d57>] rewind_stack_do_exit+0x17/0x20
+[92663.786814]  [<ffffffffb42a4010>] ? kthread_create_on_node+0x1e0/0x1e0
+[92663.834613] Code: 48 8d 47 20 48 89 45 a8 49 8b 47 20 48 39 45 a8 74 5d 49 8b 47 20 48 8b 75 a8 48 39 c6 74 23 49 8b 4f 20 49 8b 57 28 48 8b 45 c0 <48> 89 59 08 48 89 4d c0 48 89 02 48 89 50 08 49 89 77 20 49 89 
+[92663.921450] RIP  [<ffffffffb4600ef3>] blk_flush_plug_list+0x83/0x260
+[92663.922818]  RSP <ffff950afa82be58>
+[92663.977416] CR2: ffffffffb42dce94
+[92663.996542] ---[ end trace 119de0c902a58a78 ]---
+[92664.043711] ------------[ cut here ]------------
+[92664.074375] WARNING: CPU: 0 PID: 343 at /build/linux-nwsJPZ/linux-4.8.0/kernel/exit.c:737 do_exit+0x62/0xb20
+[92664.153702] Modules linked in: ufs msdos xfs binfmt_misc vboxsf ppdev isofs crct10dif_pclmul crc32_pclmul ghash_clmulni_intel vboxguest input_leds serio_raw parport_pc parport video ib_iser rdma_cm iw_cm ib_cm ib_core configfs iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear aesni_intel aes_x86_64 glue_helper lrw ablk_helper cryptd mptspi scsi_transport_spi mptscsih psmouse mptbase e1000
+[92664.334719] CPU: 0 PID: 343 Comm: jbd2/sda1-8 Tainted: G      D W       4.8.0-51-generic #54-Ubuntu
+[92664.400667] Hardw

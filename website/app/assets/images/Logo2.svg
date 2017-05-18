@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+    <linearGradient id="gradient-0" gradientUnits="userSpaceOnUse" x1="191" y1="0" x2="191" y2="4" gradientTransform="matrix(1.30854, 0, 0, 1.308533, -0.001396, 0)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-1" gradientUnits="userSpaceOnUse" x1="2" y1="0" x2="2" y2="112" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000004, 0)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-2" gradientUnits="userSpaceOnUse" x1="53" y1="108" x2="53" y2="112" gradientTransform="matrix(1.308531, 0, 0, 1.308537, 0.000109, -0.000397)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-3" gradientUnits="userSpaceOnUse" x1="329" y1="108" x2="329" y2="112" gradientTransform="matrix(1.30854, 0, 0, 1.308537, -0.002419, -0.000397)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-4" gradientUnits="userSpaceOnUse" x1="380" y1="0" x2="380" y2="112" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000012, 0)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-5" gradientUnits="userSpaceOnUse" x1="242" y1="108" x2="242" y2="112" gradientTransform="matrix(1.30854, 0, 0, 1.308537, -0.001785, -0.000397)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-6" gradientUnits="userSpaceOnUse" x1="140" y1="108" x2="140" y2="112" gradientTransform="matrix(1.30854, 0, 0, 1.308537, -0.001022, -0.000397)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-7" gradientUnits="userSpaceOnUse" x1="218" y1="108" x2="218" y2="274" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000009, -0.000015)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-8" gradientUnits="userSpaceOnUse" x1="164" y1="108" x2="164" y2="274" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000003, -0.000015)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-9" gradientUnits="userSpaceOnUse" x1="53" y1="270" x2="53" y2="274" gradientTransform="matrix(1.308531, 0, 0, 1.308533, 0.000109, 0.000061)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-10" gradientUnits="userSpaceOnUse" x1="140" y1="270" x2="140" y2="274" gradientTransform="matrix(1.30854, 0, 0, 1.308533, -0.001022, 0.000061)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-11" gradientUnits="userSpaceOnUse" x1="2" y1="270" x2="2" y2="382" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000004, 0.000061)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-12" gradientUnits="userSpaceOnUse" x1="191" y1="378" x2="191" y2="382" gradientTransform="matrix(1.30854, 0, 0, 1.308525, -0.001396, 0.002975)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-13" gradientUnits="userSpaceOnUse" x1="380" y1="270" x2="380" y2="382" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000012, 0.000061)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-14" gradientUnits="userSpaceOnUse" x1="329" y1="270" x2="329" y2="274" gradientTransform="matrix(1.30854, 0, 0, 1.308533, -0.002419, 0.000061)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-15" gradientUnits="userSpaceOnUse" x1="242" y1="270" x2="242" y2="274" gradientTransform="matrix(1.30854, 0, 0, 1.308533, -0.001785, 0.000061)">
+      <stop offset="0" style="stop-color: rgba(154, 154, 154, 1)"/>
+      <stop offset="1" style="stop-color: rgba(103, 103, 103, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-17" gradientUnits="userSpaceOnUse" x1="56" y1="54" x2="56" y2="106" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000008, 0.000015)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-18" gradientUnits="userSpaceOnUse" x1="56" y1="114" x2="56" y2="268" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000001, 0.000008)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-19" gradientUnits="userSpaceOnUse" x1="56" y1="276" x2="56" y2="328" gradientTransform="matrix(1.308533, 0, 0, 1.308533, -0.000008, -0.000101)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-20" gradientUnits="userSpaceOnUse" x1="83" y1="324" x2="83" y2="328" gradientTransform="matrix(1.308535, 0, 0, 1.30854, -0.000135, -0.002411)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-21" gradientUnits="userSpaceOnUse" x1="110" y1="216" x2="110" y2="328" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000003, 0.000002)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-22" gradientUnits="userSpaceOnUse" x1="110" y1="54" x2="110" y2="166" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000003, 0.000008)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-23" gradientUnits="userSpaceOnUse" x1="134" y1="162" x2="134" y2="166" gradientTransform="matrix(1.308529, 0, 0, 1.308533, 0.000542, 0.000031)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-24" gradientUnits="userSpaceOnUse" x1="134.005" y1="216" x2="134.005" y2="220" gradientTransform="matrix(1.308529, 0, 0, 1.308525, 0.000539, 0.001709)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-25" gradientUnits="userSpaceOnUse" x1="191" y1="162" x2="191" y2="166" gradientTransform="matrix(1.30854, 0, 0, 1.308533, -0.001396, 0.000031)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-26" gradientUnits="userSpaceOnUse" x1="191" y1="216" x2="191" y2="220" gradientTransform="matrix(1.30854, 0, 0, 1.308525, -0.001396, 0.001709)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-27" gradientUnits="userSpaceOnUse" x1="248" y1="162" x2="248" y2="166" gradientTransform="matrix(1.308525, 0, 0, 1.308533, 0.001923, 0.000031)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-28" gradientUnits="userSpaceOnUse" x1="272" y1="54" x2="272" y2="166" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000024, 0.000008)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-29" gradientUnits="userSpaceOnUse" x1="299" y1="54" x2="299" y2="58" gradientTransform="matrix(1.308525, 0, 0, 1.308531, 0.002342, 0.000118)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-30" gradientUnits="userSpaceOnUse" x1="326" y1="114" x2="326" y2="268" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000029, 0.000008)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-31" gradientUnits="userSpaceOnUse" x1="326" y1="276" x2="326" y2="328" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000061, -0.000101)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-32" gradientUnits="userSpaceOnUse" x1="299" y1="324" x2="299" y2="328" gradientTransform="matrix(1.308525, 0, 0, 1.30854, 0.002342, -0.002411)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-33" gradientUnits="userSpaceOnUse" x1="272" y1="216" x2="272" y2="328" gradientTransform="matrix(1.308533, 0, 0, 1.308533, 0.000024, 0.000002)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-34" gradientUnits="userSpaceOnUse" x1="248" y1="216" x2="248" y2="220" gradientTransform="matrix(1.308525, 0, 0, 1.308525, 0.001923, 0.001709)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-35" gradientUnits="userSpaceOnUse" x1="83" y1="54" x2="83" y2="58" gradientTransform="matrix(1.308535, 0, 0, 1.308531, -0.000135, 0.000118)">
+      <stop offset="0" style="stop-color: rgba(216, 216, 216, 1)"/>
+      <stop offset="1" style="stop-color: rgba(165, 165, 165, 1)"/>
+    </linearGradient>
+  </defs>
+  <path style="stroke: black; fill: none;"/>
+  <path style="stroke: black; fill: none;"/>
+  <path style="stroke: black; fill: none;"/>
+  <rect width="499.86" height="5.234" style="fill: url(#gradient-0);"/>
+  <rect width="5.234" height="146.556" style="fill: url(#gradient-1);"/>
+  <rect width="5.234" height="146.556" y="353.304" style="fill: url(#gradient-11);"/>
+  <rect width="499.86" height="5.234" y="494.625" style="fill: url(#gradient-12);"/>
+  <rect x="70.661" y="70.661" width="75.895" height="5.234" style="fill: url(#gradient-35);"/>
+  <rect x="70.661" y="423.965" width="75.895" height="5.234" style="fill: url(#gradient-20);"/>
+  <rect width="138.704" height="5.234" y="141.322" style="fill: url(#gradient-2);"/>
+  <rect width="138.704" height="5.234" y="353.304" style="fill: url(#gradient-9);"/>
+  <rect x="70.661" y="149.173" width="5.234" height="201.514" style="fill: url(#gradient-18);"/>
+  <rect x="70.661" y="70.661" width="5.234" height="68.044" style="fill: url(#gradient-17);"/>
+  <rect x="70.661" y="361.155" width="5.234" height="68.044" style="fill: url(#gradient-19);"/>
+  <rect x="141.322" y="70.661" width="5.234" height="146.556" style="fill: url(#gradient-22);"/>
+  <rect x="141.322" y="282.643" width="5.234" height="146.556" style="fill: url(#gradient-21);"/>
+  <rect x="141.322" y="211.982" width="68.044" height="5.234" style="fill: url(#gradient-23);"/>
+  <rect x="141.328" y="282.643" width="68.044" height="5.234" style="fill: url(#gradient-24);"/>
+  <rect width="68.044" height="5.234" y="141.322" x="149.173" style="fill: url(#gradient-6);"/>
+  <rect width="68.044" height="5.234" y="353.304" x="149.173" style="fill: url(#gradient-10);"/>
+  <rect width="5.234" height="217.216" x="211.982" y="141.322" style="fill: url(#gradient-8);"/>
+  <rect width="5.234" height="146.556" x="494.625" style="fill: url(#gradient-4);"/>
+  <rect width="5.234" height="146.556" y="353.304" x="494.625" style="fill: url(#gradient-13);"/>
+  <rect width="138.704" height="5.234" y="141.322" x="361.155" style="fill: url(#gradient-3);"/>
+  <rect width="138.704" height="5.234" y="353.304" x="361.155" style="fill: url(#gradient-14);"/>
+  <rect x="353.304" y="70.661" width="75.895" height="5.234" style="fill: url(#gradient-29);"/>
+  <rect x="353.304" y="423.965" width="75.895" height="5.234" style="fill: url(#gradient-32);"/>
+  <rect x="423.965" y="149.173" width="5.234" height="201.514" style="fill: url(#gradient-30);"/>
+  <rect x="423.965" y="70.661" width="5.234" height="68.044" style="fill: rgb(216, 216, 216);"/>
+  <rect x="423.965" y="361.155" width="5.234" height="68.044" style="fill: url(#gradient-31);"/>
+  <rect x="353.304" y="70.661" width="5.234" height="146.556" style="fill: url(#gradient-28);"/>
+  <rect x="353.304" y="282.643" width="5.234" height="146.556" style="fill: url(#gradient-33);"/>
+  <rect width="68.044" height="5.234" y="141.322" x="282.643" style="fill: url(#gradient-5);"/>
+  <rect width="68.044" height="5.234" y="353.304" x="282.643" style="fill: url(#gradient-15);"/>
+  <rect width="5.234" height="217.216" x="282.643" y="141.322" style="fill: url(#gradient-7);"/>
+  <rect x="290.494" y="211.982" width="68.044" height="5.234" style="fill: url(#gradient-27);"/>
+  <rect x="290.494" y="282.643" width="68.044" height="5.234" style="fill: url(#gradient-34);"/>
+  <rect x="219.834" y="211.982" width="60.193" height="5.234" style="fill: url(#gradient-25);"/>
+  <rect x="219.834" y="282.643" width="60.193" height="5.234" style="fill: url(#gradient-26);"/>
+</svg>
